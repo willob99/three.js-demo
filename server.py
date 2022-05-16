@@ -59,7 +59,7 @@ class HttpRequestHandlerWithPost(http.server.SimpleHTTPRequestHandler):
         # Remove data URL prefix.
         if (data.startswith(b"data:image/jpeg;base64,")):
             data = data.replace(b"data:image/jpeg;base64,", b"", 1)
-        elif (str(data).startswith(b"data:image/png;base64,")):
+        elif (data.startswith(b"data:image/png;base64,")):
             data = data.replace(b"data:image/png;base64,", b"", 1)
         else:
             print("Invalid data received, no file saved.")
